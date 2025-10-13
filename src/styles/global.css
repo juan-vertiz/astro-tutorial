@@ -1,0 +1,50 @@
+:root {
+  --primary-color: #6aa7d7;
+  --dark-color: #2a2b30;
+  --light-color: #a4a5a9;
+}
+
+html {
+  background-color: var(--dark-color);
+  font-family: sans-serif;
+  color: var(--light-color);
+}
+
+body {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 80ch;
+  padding: 1rem;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:heading {
+  margin: 1rem 0;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+}
+
+a:link, a:visited, a:hover, a:active {
+  color: var(--primary-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.navbar {
+  display: flex;
+  gap: 16px;
+}
+
+.navbar .active {
+  font-weight: bold;
+}

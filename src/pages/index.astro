@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 const pageTitle = "Home";
 ---
 
@@ -11,9 +13,11 @@ const pageTitle = "Home";
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<a href="/astro-tutorial/">Home</a>
-    <a href="/astro-tutorial/about/">About</a>
-    <a href="/astro-tutorial/blog/">Blog</a>
+		<nav class="navbar">
+			<a href="/astro-tutorial/" class="active">Home</a>
+			<a href="/astro-tutorial/about/">About</a>
+			<a href="/astro-tutorial/blog/">Blog</a>
+		</nav>
 		<h1>{pageTitle}</h1>
 	</body>
 </html>

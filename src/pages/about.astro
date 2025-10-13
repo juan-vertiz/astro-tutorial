@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 const pageTitle = "About Me";
 
 const identity = {
@@ -18,11 +20,29 @@ const skills = ["test automation", "robotic process automation"];
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+		<style>
+			.skill {
+				width: fit-content;
+				background-color: var(--primary-color);
+				color: var(--dark-color);
+				font-weight: bold;
+				list-style: none;
+				padding: 2px 8px;
+				border-radius: 16px;
+				display: inline-block;
+			}
+			.skill:not(:last-child) {
+				margin-right: 8px;
+				margin-bottom: 8px;
+			}
+		</style>
 	</head>
 	<body>
-    <a href="/astro-tutorial/">Home</a>
-    <a href="/astro-tutorial/about/">About</a>
-    <a href="/astro-tutorial/blog/">Blog</a>
+		<nav class="navbar">
+			<a href="/astro-tutorial/">Home</a>
+			<a href="/astro-tutorial/about/" class="active">About</a>
+			<a href="/astro-tutorial/blog/">Blog</a>
+		</nav>
 		<h1>{pageTitle}</h1>
     <p>Here are a few facts about me:</p>
 		<ul>
@@ -34,7 +54,7 @@ const skills = ["test automation", "robotic process automation"];
 		</ul>
     <p>My skills are:</p>
 		<ul>
-			{skills.map((skill) => <li>{skill}</li>)}
+			{skills.map((skill) => <li class="skill">{skill}</li>)}
 		</ul>
 	</body>
 </html>
