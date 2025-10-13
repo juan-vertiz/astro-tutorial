@@ -1,0 +1,11 @@
+---
+import Menu from './Menu.astro';
+import Navbar from './Navbar.astro';
+
+const { activeItem } = Astro.props;
+---
+
+<header>
+  <Menu></Menu>
+  <Navbar activeItem={activeItem}></Navbar>
+</header>

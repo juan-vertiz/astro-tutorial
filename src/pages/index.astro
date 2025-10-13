@@ -1,5 +1,6 @@
 ---
-import Navbar from '../components/Navbar.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 const pageTitle = "Home";
@@ -14,7 +15,11 @@ const pageTitle = "Home";
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<Navbar activeItem="home"></Navbar>
+		<Header activeItem="home"></Header>
 		<h1>{pageTitle}</h1>
+		<Footer></Footer>
+		<script>
+			import '../scripts/menu.js';
+		</script>
 	</body>
 </html>

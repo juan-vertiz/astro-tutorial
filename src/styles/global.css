@@ -22,10 +22,11 @@ body {
   box-sizing: border-box;
 }
 
-:heading {
+h1, h2, h3, h4, h5, h6 {
   margin: 1rem 0;
   font-size: 2.5rem;
   color: var(--primary-color);
+  text-transform: capitalize;
 }
 
 a:link, a:visited, a:hover, a:active {
@@ -38,4 +39,60 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+.menu {
+  background-color: var(--light-color);
+  border: none;
+  color: var(--dark-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+.navbar {
+  width: 100%;
+  display: none;
+  margin: 0;
+}
+
+.navbar a {
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: var(--light-color);
+}
+
+.navbar a:hover,
+.navbar a:focus {
+  color: var(--primary-color);
+}
+
+.navbar a.active {
+  border-bottom: 2px solid var(--primary-color);
+}
+
+:has(.menu[aria-expanded="true"]) .navbar {
+  display: unset;
+}
+
+@media screen and (min-width: 636px) {
+  .navbar {
+    margin-left: 5em;
+    display: block;
+    position: static;
+    width: auto;
+    background: none;
+  }
+
+  .navbar a {
+    display: inline-block;
+    padding: 8px 20px;
+  }
+
+  .menu {
+    display: none;
+  }
 }

@@ -1,0 +1,15 @@
+---
+const { text, href, icon } = Astro.props;
+---
+
+<style>
+  a {
+    display: flex;
+    gap: 8px;
+  }
+
+  img {
+    width: 24px;
+  }
+</style>
+<a href={href}><img src={icon} alt={`${text} icon`}><span>{text}</span></a>

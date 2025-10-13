@@ -1,0 +1,19 @@
+---
+import Social from './Social.astro';
+
+const links = [
+  { text: "LinkedIn", href: "https://www.linkedin.com/in/juan-vertiz", icon: "/astro-tutorial/images/linkedin-icon.svg" },
+  { text: "GitHub", href: "https://github.com/juan-vertiz", icon: "/astro-tutorial/images/github-icon.svg" },
+]
+---
+
+<style>
+  footer {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+</style>
+<footer>
+  {links.map((link) => <Social text={link.text} href={link.href} icon={link.icon}></Social>)}
+</footer>

@@ -1,17 +1,7 @@
 ---
 const { activeItem } = Astro.props;
 ---
-<style>
-  .navbar {
-    display: flex;
-    gap: 16px;
-  }
-
-  .navbar .active {
-    font-weight: bold;
-}
-</style>
-<nav class="navbar">
+<nav id="main-menu" class="navbar">
   <a href="/astro-tutorial/" class:list={[ { active: activeItem === "home" } ]}>Home</a>
   <a href="/astro-tutorial/about/" class:list={[ { active: activeItem === "about" } ]}>About</a>
   <a href="/astro-tutorial/blog/" class:list={[ { active: activeItem === "blog" } ]}>Blog</a>
