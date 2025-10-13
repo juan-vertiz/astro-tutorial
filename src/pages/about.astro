@@ -1,4 +1,5 @@
 ---
+import Navbar from '../components/Navbar.astro';
 import '../styles/global.css';
 
 const pageTitle = "About Me";
@@ -38,11 +39,7 @@ const skills = ["test automation", "robotic process automation"];
 		</style>
 	</head>
 	<body>
-		<nav class="navbar">
-			<a href="/astro-tutorial/">Home</a>
-			<a href="/astro-tutorial/about/" class="active">About</a>
-			<a href="/astro-tutorial/blog/">Blog</a>
-		</nav>
+		<Navbar activeItem="about"></Navbar>
 		<h1>{pageTitle}</h1>
     <p>Here are a few facts about me:</p>
 		<ul>

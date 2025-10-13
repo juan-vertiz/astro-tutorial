@@ -39,12 +39,3 @@ a {
 a:hover {
   text-decoration: underline;
 }
-
-.navbar {
-  display: flex;
-  gap: 16px;
-}
-
-.navbar .active {
-  font-weight: bold;
-}
