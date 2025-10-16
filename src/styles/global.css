@@ -1,12 +1,17 @@
 :root {
   --primary-color: #6aa7d7;
   --dark-color: #2a2b30;
-  --light-color: #a4a5a9;
+  --light-color: #f1f1f1;
 }
 
 html {
-  background-color: var(--dark-color);
+  background-color: var(--light-color);
   font-family: sans-serif;
+  color: var(--dark-color);
+}
+
+html.dark {
+  background-color: var(--dark-color);
   color: var(--light-color);
 }
 
@@ -51,6 +56,12 @@ a:hover {
   font-size: 1.2rem;
   font-weight: bold;
   padding: 5px 10px;
+  cursor: pointer;
+}
+
+.dark .menu {
+  background-color: var(--dark-color);
+  color: var(--light-color);
 }
 
 .navbar {
@@ -65,6 +76,10 @@ a:hover {
   padding: 10px 0;
   text-decoration: none;
   font-size: 1.2rem;
+  color: var(--dark-color);
+}
+
+.dark .navbar a {
   color: var(--light-color);
 }
 

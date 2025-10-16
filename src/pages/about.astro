@@ -7,7 +7,7 @@ const identity = {
 	firstName: "Juan",
 	country: "Mexico",
 	occupation: "Software Test Automation Engineer",
-	hobbies: ["gaming", "flag football", "movies"],
+	defaultHobby: "programming",
 };
 
 const skills = ["test automation", "robotic process automation"];
@@ -34,12 +34,16 @@ const skills = ["test automation", "robotic process automation"];
 	<ul>
 		<li>My name is {identity.firstName}.</li>
 		<li>I live in {identity.country} and I work as a {identity.occupation}.</li>
-		{identity.hobbies.length >= 1 &&
-			<li>One of my favorite hobbies is: {identity.hobbies[Math.floor(Math.random() * identity.hobbies.length)]}.</li>
-		}
+		<li>One of my favorite hobbies is <span id="hobby">{identity.defaultHobby}</span>.</li>
 	</ul>
 	<p>My skills are:</p>
 	<ul>
 		{skills.map((skill) => <li class="skill">{skill}</li>)}
 	</ul>
 </BaseLayout>
+
+<script is:inline>
+	const hobbies = ['programming', 'watching movies', 'playing flag football', 'playing Halo'];
+
+	document.getElementById('hobby').innerText = hobbies[Math.floor(Math.random() * hobbies.length)];
+</script>
