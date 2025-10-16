@@ -8,7 +8,18 @@ const uniqueTags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <ul>
-    {uniqueTags.map((tag) => <li><a href={`/astro-tutorial/blog/tags/${tag}`}>{tag}</a></li>)}
-  </ul>
+  <div class="tags">{uniqueTags.map((tag) => <p class="tag"><a href={`/astro-tutorial/blog/tags/${tag}`}>{tag}</a></p>)}</div>
 </BaseLayout>
+<style>
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    margin: 0.25rem;
+    border: solid 1px var(--primary-color);
+    border-radius: .5rem;
+    padding: .2em .5em;
+  }
+</style>
