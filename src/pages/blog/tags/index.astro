@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const pageTitle = "Tag Index";
+
+const allPosts = Object.values(import.meta.glob('../*.md', { eager: true }));
+const uniqueTags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())];
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div>{uniqueTags.map((tag) => <p><a href={`/astro-tutorial/blog/tags/${tag}`}>{tag}</a></p>)}</div>
+</BaseLayout>
