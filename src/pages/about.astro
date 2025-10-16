@@ -14,19 +14,19 @@ const skills = ["test automation", "robotic process automation"];
 ---
 
 <style>
-	.skill {
-		width: fit-content;
-		background-color: var(--primary-color);
-		color: var(--dark-color);
-		font-weight: bold;
-		list-style: none;
-		padding: 2px 8px;
-		border-radius: 16px;
-		display: inline-block;
+	.skills {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.25rem;
 	}
-	.skill:not(:last-child) {
-		margin-right: 8px;
-		margin-bottom: 8px;
+
+	.skill {
+		color: var(--dark-color);
+    background-color: var(--primary-color);
+    border-radius: .5rem;
+    padding: .2em .5em;
+		margin: 0;
+		font-weight: bold;
 	}
 </style>
 <BaseLayout pageTitle={pageTitle} activeItem="about">
@@ -37,9 +37,9 @@ const skills = ["test automation", "robotic process automation"];
 		<li>One of my favorite hobbies is <span id="hobby">{identity.defaultHobby}</span>.</li>
 	</ul>
 	<p>My skills are:</p>
-	<ul>
-		{skills.map((skill) => <li class="skill">{skill}</li>)}
-	</ul>
+	<div class="skills">
+		{skills.map((skill) => <p class="skill">{skill}</p>)}
+	</div>
 </BaseLayout>
 
 <script is:inline>
